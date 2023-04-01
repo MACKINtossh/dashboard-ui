@@ -47,6 +47,11 @@ const Navbar = () => {
             </IconButton>
           </FlexBetween>
         </FlexBetween>
+
+        {/* RIGHT SIDE */}
+        <FlexBetween gap="1.5rem">
+          <IconButton onClick={() => dispatch(setmode())}></IconButton>
+        </FlexBetween>
       </Toolbar>
     </AppBar>
   );

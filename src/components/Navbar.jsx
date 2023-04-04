@@ -18,7 +18,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   // Review Redux-Toolkit AND useDispatch() function
 
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ const Navbar = () => {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
         <FlexBetween gap="1rem">
-          <IconButton onClick={() => console.log("toggle sidebar")}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween

@@ -12,11 +12,11 @@ import Home from "scenes/home";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
-  // const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div className="app">
       <BrowserRouter>
-        {/* <ThemeProvider theme={theme}> */}
+        <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
           <Route element={<Layout />}>
@@ -27,7 +27,7 @@ function App() {
           <Route path="/ownership" element={<Ownership />} />
           </Route>
         </Routes>
-        {/* </ThemeProvider> */}
+        </ThemeProvider>
       </BrowserRouter>
     </div>
   );

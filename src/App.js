@@ -4,11 +4,11 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
-import Layout from "scenes/layout";
-import Dashboard from "scenes/dashboard";
+import Layout from "scenes/business/layout";
+import Dashboard from "scenes/business/dashboard";
 import Financials from "scenes/financials";
-import Ownership from "scenes/ownership";
-import Home from "scenes/home";
+import Ownership from "scenes/personal/ownershipPage";
+import Home from "scenes/personal/homePage";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);

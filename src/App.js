@@ -23,7 +23,7 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/navbar" element={<Navbar />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/profile/:userId" element={<ProfilePage />} />
             {/* <Route element={<Layout />}> */}
             {/* <Route path="/" element={<Navigate to="/home" replace />} /> */}

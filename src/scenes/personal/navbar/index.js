@@ -66,9 +66,6 @@ const Navbar = () => {
         >
           Title!!
         </Typography>
-
-        {/* DESKTOP NAV */}
-
         {isNonMobileScreens && (
           <FlexBetween
             backgroundColor={neutralLight}
@@ -84,55 +81,9 @@ const Navbar = () => {
         )}
       </FlexBetween>
 
-      {/* {isNonMobileScreens ? (
-        <FlexBetween className="leftNav">
-          <IconButton onClick={() => dispatch(setMode())}>
-            {theme.palette.mode === "dark" ? (
-              <DarkMode sx={{ fontSize: "25px" }} />
-            ) : (
-              <LightMode sx={{ color: dark, fontSize: "25px" }} />
-            )}
-          </IconButton>
-          <Message sx={{ color: dark, fontSize: "25px" }} />
-          <Notifications sx={{ color: dark, fontSize: "25px" }} />
-          <Help sx={{ color: dark, fontSize: "25px" }} />
-          <FormControl variant="standard" value={FullName}>
-            <Select
-              value={FullName}
-              sx={{
-                backgroundColor: neutralLight,
-                width: "150px",
-                borderRadius: "0.25rem",
-                p: "0.25rem 1rem",
-                "& .MuiSvgIcon-root": {
-                  pr: "0.25rem",
-                  width: "3rem",
-                },
-                "& .MuiSelect-select:focus": {
-                  backgroundColor: neutralLight,
-                },
-              }}
-              input={<InputBase />}
-            >
-              <MenuItem value={FullName}>
-                <Typography>{FullName}</Typography>
-              </MenuItem>
-              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
-            </Select>
-          </FormControl>
-        </FlexBetween>
-      ) : (
-        <IconButton
-          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-        >
-          <Menu />
-        </IconButton>
-      )} */}
-
-      {/* RIGHT SIDE */}
-
+      {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
-        <FlexBetween className="rightNav" gap="1.5rem">
+        <FlexBetween gap="2rem">
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkMode sx={{ fontSize: "25px" }} />
@@ -140,9 +91,9 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-          <Message sx={{ color: dark, fontSize: "25px" }} />
-          <Notifications sx={{ color: dark, fontSize: "25px" }} />
-          <Help sx={{ color: dark, fontSize: "25px" }} />
+          <Message sx={{ fontSize: "25px" }} />
+          <Notifications sx={{ fontSize: "25px" }} />
+          <Help sx={{ fontSize: "25px" }} />
           <FormControl variant="standard" value={FullName}>
             <Select
               value={FullName}

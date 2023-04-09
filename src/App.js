@@ -11,6 +11,7 @@ import Ownership from "scenes/personal/ownershipPage";
 import Home from "scenes/personal/homePage";
 import LoginPage from "scenes/login";
 import ProfilePage from "scenes/personal/profilePage";
+import Navbar from "scenes/personal/navbar";
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -22,7 +23,7 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/navbar" element={<Navbar />} />
             <Route path="/profile/:userId" element={<ProfilePage />} />
             {/* <Route element={<Layout />}> */}
             {/* <Route path="/" element={<Navigate to="/home" replace />} /> */}

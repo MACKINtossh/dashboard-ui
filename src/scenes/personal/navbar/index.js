@@ -46,7 +46,7 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  // const fullName = `${user.firstName} ${user.lastName}`;
+  // const FullName = `${user.firstName} ${user.lastName}`;
   const FullName = "Jordan Fontaine";
 
   return (
@@ -129,22 +129,95 @@ const Navbar = () => {
         </IconButton>
       )} */}
 
-      {/* MOBILE NAVBAR */}
-
       {/* RIGHT SIDE */}
 
-        {isNonMobileScreens ? (
-          <FlexBetween className="rightNav" gap="1.5rem">
-            <IconButton onClick={() => dispatch(setMode())}>
+      {isNonMobileScreens ? (
+        <FlexBetween className="rightNav" gap="1.5rem">
+          <IconButton onClick={() => dispatch(setMode())}>
+            {theme.palette.mode === "dark" ? (
+              <DarkMode sx={{ fontSize: "25px" }} />
+            ) : (
+              <LightMode sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+          <Message sx={{ color: dark, fontSize: "25px" }} />
+          <Notifications sx={{ color: dark, fontSize: "25px" }} />
+          <Help sx={{ color: dark, fontSize: "25px" }} />
+          <FormControl variant="standard" value={FullName}>
+            <Select
+              value={FullName}
+              sx={{
+                backgroundColor: neutralLight,
+                width: "150px",
+                borderRadius: "0.25rem",
+                p: "0.25rem 1rem",
+                "& .MuiSvgIcon-root": {
+                  pr: "0.25rem",
+                  width: "3rem",
+                },
+                "& .MuiSelect-select:focus": {
+                  backgroundColor: neutralLight,
+                },
+              }}
+              input={<InputBase />}
+            >
+              <MenuItem value={FullName}>
+                <Typography>{FullName}</Typography>
+              </MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
+            </Select>
+          </FormControl>
+        </FlexBetween>
+      ) : (
+        <IconButton
+          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
+        >
+          <Menu />
+        </IconButton>
+      )}
+
+      {/* MOBILE NAV */}
+      {!isNonMobileScreens && isMobileMenuToggled && (
+        <Box
+          position="fixed"
+          right="0"
+          bottom="0"
+          height="100%"
+          zIndex="10"
+          maxWidth="500px"
+          minWidth="300px"
+          backgroundColor={background}
+        >
+          {/* CLOSE ICON */}
+          <Box display="flex" justifyContent="flex-end" p="1rem">
+            <IconButton
+              onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
+            >
+              <Close />
+            </IconButton>
+          </Box>
+
+          {/* MENU ITEMS */}
+          <FlexBetween
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            gap="3rem"
+          >
+            <IconButton
+              onClick={() => dispatch(setMode())}
+              sx={{ fontSize: "25px" }}
+            >
               {theme.palette.mode === "dark" ? (
                 <DarkMode sx={{ fontSize: "25px" }} />
               ) : (
                 <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
             </IconButton>
-            <Message sx={{ color: dark, fontSize: "25px" }} />
-            <Notifications sx={{ color: dark, fontSize: "25px" }} />
-            <Help sx={{ color: dark, fontSize: "25px" }} />
+            <Message sx={{ fontSize: "25px" }} />
+            <Notifications sx={{ fontSize: "25px" }} />
+            <Help sx={{ fontSize: "25px" }} />
             <FormControl variant="standard" value={FullName}>
               <Select
                 value={FullName}
@@ -172,13 +245,8 @@ const Navbar = () => {
               </Select>
             </FormControl>
           </FlexBetween>
-        ) : (
-          <IconButton
-            onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-          >
-            <Menu />
-          </IconButton>
-        )}
+        </Box>
+      )}
     </FlexBetween>
   );
 };

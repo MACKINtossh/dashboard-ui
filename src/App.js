@@ -9,24 +9,28 @@ import Dashboard from "scenes/business/dashboard";
 import Financials from "scenes/financials";
 import Ownership from "scenes/personal/ownershipPage";
 import Home from "scenes/personal/homePage";
+import LoginPage from "scenes/login";
+import ProfilePage from "scenes/personal/profilePage";
 
 function App() {
-  const mode = useSelector((state) => state.global.mode);
+  const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Routes>
-          <Route element={<Layout />}>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/financials" element={<Financials />} />
-          <Route path="/ownership" element={<Ownership />} />
-          </Route>
-        </Routes>
+          <CssBaseline />
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/profile/:userId" element={<ProfilePage />} />
+            {/* <Route element={<Layout />}> */}
+            {/* <Route path="/" element={<Navigate to="/home" replace />} /> */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/financials" element={<Financials />} />
+            <Route path="/ownership" element={<Ownership />} />
+            {/* </Route> */}
+          </Routes>
         </ThemeProvider>
       </BrowserRouter>
     </div>

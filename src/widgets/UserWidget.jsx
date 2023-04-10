@@ -29,10 +29,8 @@ const UserWidget = ({ userId, picturePath }) => {
     const data = await response.json();
     setUser(data);
   };
-  
-  
-  
-// HANDLE LOADING PROCESSES
+
+  // HANDLE LOADING PROCESSES
   useEffect(() => {
     getUser();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -152,5 +150,3 @@ const UserWidget = ({ userId, picturePath }) => {
 };
 
 export default UserWidget;
-
-       

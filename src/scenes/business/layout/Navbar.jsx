@@ -7,7 +7,7 @@ import {
   SettingsOutlined,
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
-import FlexBetween from "./FlexBetween";
+import FlexBetween from "../../../components/FlexBetween";
 import { useDispatch } from "react-redux";
 import { setMode } from "state/business";
 import {

@@ -1,13 +1,8 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Form from "./Form";
 
 const LoginPage = () => {
   const theme = useTheme();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const primaryLight = theme.palette.primary.light;
@@ -32,7 +27,12 @@ const LoginPage = () => {
         borderRadius="1.5rem"
         backgroundColor={theme.palette.background.alt}
       >
-        <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
+        <Typography
+          fontWeight="bold"
+          variant="h5"
+          textAlign="center"
+          sx={{ mb: "1.5rem" }}
+        >
           Welcome to ____, a space to Take Control.
         </Typography>
         <Form />

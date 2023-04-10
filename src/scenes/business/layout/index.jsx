@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import Navbar from "components/Navbar";
-import Sidebar from "components/Sidebar";
+import Navbar from "scenes/business/layout/Navbar";
+import Sidebar from "scenes/business/layout/Sidebar";
 import { useGetUserQuery } from "state/business/api";
 import { useSelector } from "react-redux";
 

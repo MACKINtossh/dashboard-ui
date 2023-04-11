@@ -33,7 +33,7 @@ import {
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "../../../components/FlexBetween";
-import profileImage from "assets/profilePic.jpg";
+
 
 const navItems = [
   {
@@ -201,7 +201,7 @@ const Sidebar = ({
               <Box
                 component="img"
                 alt="profile"
-                src={profileImage}
+
                 height="40px"
                 width="40px"
                 borderRadius="50%"

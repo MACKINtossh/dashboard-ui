@@ -20,14 +20,17 @@ const UserWidget = ({ userId, picturePath }) => {
   const dark = palette.neutral.dark;
   const medium = palette.neutral.medium;
   const main = palette.neutral.main;
+  const tokenString = token.toString();
 
   const getUser = async () => {
     const response = await fetch(`http://localhost:6001/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
+
     const data = await response.json();
     setUser(data);
+    console.log(data);
   };
 
   // HANDLE LOADING PROCESSES
@@ -73,7 +76,7 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friends.length} friends</Typography>
+            <Typography color={medium}>{friends?.length} friends</Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />

@@ -22,7 +22,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import profileImage from "assets/profilePic.jpg";
+
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   // Review Redux-Toolkit AND useDispatch() function
@@ -88,7 +88,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <Box
                 component="img"
                 alt="profile"
-                src={profileImage}
+
                 height="32px"
                 width="32px"
                 borderRadius="50%"

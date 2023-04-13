@@ -65,7 +65,7 @@ const Navbar = () => {
             },
           }}
         >
-          Title!!
+          StudyMed
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween

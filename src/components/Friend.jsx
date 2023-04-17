@@ -1,5 +1,5 @@
 import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
-import { Box, IconButton, Typography, useTheme } from "@mui/icons-material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setFriends } from "state/personal";
 import FlexBetween from "./FlexBetween";
@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `https://localhost/6001/users/${_id}/${friendId}`,
+      `http://localhost:6001/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
@@ -52,7 +52,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
             fontWeight="500"
             sx={{
               "&:hover": {
-                color: PaletteRounded.primary.light,
+                color: palette.primary.light,
                 cursor: "pointer",
               },
             }}
@@ -72,7 +72,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         {isFriend ? (
           <PersonRemoveOutlined sx={{ color: primaryDark }} />
         ) : (
-          <PersonAddOutlined sx={{ color: primaryDark }} />
+          <PersonAddOutlined />
         )}
       </IconButton>
     </FlexBetween>

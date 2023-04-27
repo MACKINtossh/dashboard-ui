@@ -28,7 +28,7 @@ import {
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout } from "state/personal";
+import { setMode, setLogout } from "state/chat";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 

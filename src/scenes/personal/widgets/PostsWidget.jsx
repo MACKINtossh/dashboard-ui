@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state/personal";
+import { setPosts } from "state/chat";
 import PostWidget from "./PostWidget";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
@@ -37,39 +37,37 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <>
-  
-  {posts.map(
-  ({
-    _id,
-    userId,
-    firstName,
-    lastName,
-    description,
-    location,
-    picturePath,
-    userPicturePath,
-    likes,
-    comments
-  }) => (
-    <PostWidget
-    key={_id}
-    postId={_id}
-    postUserId={userId}
-    name={`${firstName} ${lastName}`}
-    description={description}
-    location={location}
-    picturePath={picturePath}
-    userPicturePath={userPicturePath}
-    likes={likes}
-    comments={comments}
-    />
-  )
-  )}
-  
-  </>
-  
-  ;
+  return (
+    <>
+      {posts.map(
+        ({
+          _id,
+          userId,
+          firstName,
+          lastName,
+          description,
+          location,
+          picturePath,
+          userPicturePath,
+          likes,
+          comments,
+        }) => (
+          <PostWidget
+            key={_id}
+            postId={_id}
+            postUserId={userId}
+            name={`${firstName} ${lastName}`}
+            description={description}
+            location={location}
+            picturePath={picturePath}
+            userPicturePath={userPicturePath}
+            likes={likes}
+            comments={comments}
+          />
+        )
+      )}
+    </>
+  );
 };
 
 export default PostsWidget;

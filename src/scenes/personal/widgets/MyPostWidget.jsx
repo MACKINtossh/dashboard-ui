@@ -20,10 +20,10 @@ import {
 import FlexBetween from "components/FlexBetween";
 import Dropzone from "react-dropzone";
 import UserImage from "components/UserImage";
-import WidgetWrapper from "components/WidgetWrapper";
+import WidgetWrapper from "components/chat/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state/personal";
+import { setPosts } from "state/chat";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();

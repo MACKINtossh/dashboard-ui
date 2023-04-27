@@ -6,7 +6,7 @@ import globalReducer from "state/business";
 import { Provider } from "react-redux";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { api } from "state/business/api";
-import authReducer from "./state/personal";
+import authReducer from "./state/chat";
 import {
   persistStore,
   persistReducer,
